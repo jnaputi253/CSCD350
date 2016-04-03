@@ -1,12 +1,13 @@
 /**
- * Created by jnaputi253 on 3/30/16.
+ * Created by jnaputi253 on 4/3/16.
  */
+
 
 import java.util.*;
 import java.io.*;
 
 public class Test {
-    static int currentRow = 1;
+    private static int currentRow = 1;
 
     public static void main(String[] args) {
         if(args.length > 0) {
@@ -65,8 +66,11 @@ public class Test {
     }
 
     private static void loadData(String[][] gameBoard, String[] data) {
-        for(int i = 1; i < gameBoard.length - 1; i++) {
+        System.out.println("Length of row: " + gameBoard[0].length);
+        System.out.println("Cap of loop: " + (gameBoard[0].length - 1));
+        for(int i = 1; i < gameBoard[i].length - 1; i++) {
             gameBoard[currentRow][i] = data[i - 1];
+            System.out.println("Distance from end: " + ((gameBoard[i].length - 1) - i));
         }
 
         currentRow++;
@@ -117,6 +121,8 @@ public class Test {
                 }
             }
         }
+
+        currentRow = 1;
     }
 
     private static void space() {
